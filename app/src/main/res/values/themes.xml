@@ -13,4 +13,16 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <!-- Alert Dialog Style-->
+    <style name="MyAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- Used for the border radius -->
+        <item name="android:bottomLeftRadius">5dp</item>
+        <item name="android:bottomRightRadius">5dp</item>
+        <item name="android:topRightRadius">5dp</item>
+        <item name="android:topLeftRadius">5dp</item>
+        <item name="android:autofilledHighlight" tools:targetApi="o">@android:color/transparent</item>
+    </style>
 </resources>
