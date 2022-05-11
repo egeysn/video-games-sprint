@@ -7,7 +7,7 @@ import com.egeysn.video_games_sprint.utils.LoadingHelper
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class BaseFragment : Fragment() {
+open class BaseFragment : Fragment() {
 
     lateinit var loadingHelper: LoadingHelper
 
