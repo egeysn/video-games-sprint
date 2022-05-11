@@ -1,7 +1,6 @@
 package com.egeysn.video_games_sprint.data.generals
 
 import com.egeysn.video_games_sprint.data.repositories.*
-import com.egeysn.video_games_sprint.data.response.*
 
 
 data class ResultsItem(
