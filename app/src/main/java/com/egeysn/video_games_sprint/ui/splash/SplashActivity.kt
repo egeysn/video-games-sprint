@@ -14,10 +14,11 @@ class SplashActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        showLoading()
+        waitAndNavigate()
     }
 
-    fun waitAndNavigate() {
+    private fun waitAndNavigate() {
+        showLoading()
         Thread.sleep(1000)
         startActivity(MainActivity.createSimpleIntent(this))
     }

@@ -3,6 +3,7 @@ package com.egeysn.video_games_sprint.di
 import android.app.Application
 import android.content.Context
 import com.egeysn.video_games_sprint.BuildConfig
+import com.egeysn.video_games_sprint.data.remote.ApiService
 import com.egeysn.video_games_sprint.utils.NetworkUtils
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -39,6 +40,8 @@ object AppModule {
         val cacheSize: Long = 10 * 1024 * 1024
         return Cache(application.cacheDir, cacheSize)
     }
+
+
 
     @Singleton
     @Provides
@@ -101,4 +104,10 @@ object AppModule {
 
     @Provides
     fun provideGson(): Gson = GsonBuilder().create()
+
+    @Provides
+    @Singleton
+    fun provideNetworkService(retrofit: Retrofit): ApiService =
+        retrofit.create(ApiService::class.java)
+
 }
