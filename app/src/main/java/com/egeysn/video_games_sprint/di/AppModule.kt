@@ -41,8 +41,6 @@ object AppModule {
         return Cache(application.cacheDir, cacheSize)
     }
 
-
-
     @Singleton
     @Provides
     fun provideOkHttp(cache: Cache, @ApplicationContext appContext: Context): OkHttpClient {
@@ -109,5 +107,4 @@ object AppModule {
     @Singleton
     fun provideNetworkService(retrofit: Retrofit): ApiService =
         retrofit.create(ApiService::class.java)
-
 }

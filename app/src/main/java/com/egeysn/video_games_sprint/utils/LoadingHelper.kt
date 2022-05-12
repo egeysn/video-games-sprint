@@ -1,7 +1,6 @@
 package com.egeysn.video_games_sprint.utils
 
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.app.Dialog
 import android.content.Context
 import android.view.LayoutInflater

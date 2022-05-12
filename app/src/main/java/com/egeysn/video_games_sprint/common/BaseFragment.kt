@@ -13,15 +13,17 @@ open class BaseFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        loadingHelper = LoadingHelper.getInstance(requireContext())
+        loadingHelper = LoadingHelper.getInstance(requireActivity())
     }
 
     fun showLoading() {
-        loadingHelper.showDialog()
+        requireActivity().runOnUiThread {
+            loadingHelper.showDialog()
+        }
     }
 
     fun hideLoading() {
-        loadingHelper.hideDialog()
+        requireActivity().runOnUiThread { loadingHelper.hideDialog() }
     }
 
 }

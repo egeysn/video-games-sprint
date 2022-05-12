@@ -7,7 +7,6 @@
     android:background="@color/primary"
     android:orientation="vertical">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,7 +21,7 @@
                 android:id="@+id/background_iv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scaleType="fitXY"
+                android:scaleType="centerCrop"
                 tools:src="@drawable/game_place_holder" />
         </com.google.android.material.card.MaterialCardView>
 
@@ -83,7 +82,7 @@
                     android:fontFamily="@font/roboto_700"
                     android:gravity="center"
                     android:textColor="@color/white"
-                    android:textSize="14sp"
+                    android:textSize="13sp"
                     tools:text="4.48/5" />
 
             </com.google.android.material.card.MaterialCardView>

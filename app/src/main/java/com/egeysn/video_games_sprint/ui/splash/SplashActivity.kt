@@ -2,6 +2,7 @@ package com.egeysn.video_games_sprint.ui.splash
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.os.Handler
 import androidx.activity.viewModels
 import com.egeysn.video_games_sprint.R
 import com.egeysn.video_games_sprint.ui.main.MainActivity
@@ -19,7 +20,12 @@ class SplashActivity : BaseActivity() {
 
     private fun waitAndNavigate() {
         showLoading()
-        Thread.sleep(1000)
-        startActivity(MainActivity.createSimpleIntent(this))
+        val handler = Handler()
+        handler.postDelayed(
+            Runnable {
+                startActivity(MainActivity.createSimpleIntent(this))
+            },
+            2000
+        )
     }
 }
