@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="20dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/games_card_gradient"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="105dp"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/title_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_700"
+                    android:maxLines="2"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    tools:text="Grand Theft Auto 5" />
+
+                <TextView
+                    android:id="@+id/desc_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/roboto_400"
+                    android:maxLines="2"
+                    android:textColor="@color/gray3"
+                    android:textSize="14sp"
+                    tools:text="Grand Theft Auto 5" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+           <com.google.android.material.card.MaterialCardView
+               android:layout_width="wrap_content"
+               app:strokeWidth="0dp"
+               android:elevation="0dp"
+               android:layout_marginStart="15dp"
+               app:cardElevation="2dp"
+               app:cardCornerRadius="12dp"
+               app:cardBackgroundColor="@android:color/transparent"
+               android:layout_height="wrap_content">
+               <ImageView
+                   android:id="@+id/image_iv"
+                   android:layout_width="90dp"
+                   android:layout_height="100dp"
+                   tools:src="@drawable/game_place_holder" />
+           </com.google.android.material.card.MaterialCardView>
+        </FrameLayout>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

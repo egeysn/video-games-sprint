@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">video-games-sprint</string>
+    <string name="no_results">No results!</string>
+    <string name="games">Games</string>
+    <string name="favorites_text">Favorites</string>
+    <string name="featured">Featured</string>
+</resources>
