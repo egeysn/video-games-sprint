@@ -114,11 +114,11 @@ data class ParentPlatformsItem(
 )
 
 data class ShortScreenshotsItem(
-    val image: String,
-    val id: Int
+    val image: String?,
+    val id: Int?
 )
 
 data class StoresItem(
-    val id: Int,
-    val store: Store
+    val id: Int?,
+    val store: Store?
 )

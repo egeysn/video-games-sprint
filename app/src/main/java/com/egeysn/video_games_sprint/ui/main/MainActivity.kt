@@ -8,11 +8,11 @@ import androidx.activity.viewModels
 import androidx.viewpager2.widget.ViewPager2
 import com.egeysn.video_games_sprint.adapters.pagerAdapter.HomePagerAdapter
 import com.egeysn.video_games_sprint.databinding.ActivityMainBinding
-import com.egeysn.video_games_sprint.utils.views.NavigationBar
+import com.egeysn.video_games_sprint.utils.views.BottomNavigationBar
 import com.naylalabs.kotlinbaseproject.common.BaseActivity
 
 @SuppressLint("CustomSplashScreen")
-class MainActivity : BaseActivity(), NavigationBar.NavigationBarListener {
+class MainActivity : BaseActivity(), BottomNavigationBar.NavigationBarListener {
 
     private val viewModel: MainActivityViewModel by viewModels()
     private lateinit var binding: ActivityMainBinding

@@ -10,17 +10,17 @@ import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.bumptech.glide.Glide
 import com.egeysn.video_games_sprint.R
 import com.egeysn.video_games_sprint.data.generals.ResultsItem
-import com.egeysn.video_games_sprint.databinding.GamesItemBinding
+import com.egeysn.video_games_sprint.databinding.GamesPagerListItemBinding
 import com.egeysn.video_games_sprint.ui.main.home.HomeFragmentViewModel
 
-class GamesAdapter(
+class GamesViewPagerAdapter(
     private val viewModel: HomeFragmentViewModel,
     private val items: List<ResultsItem>
 ) :
-    ListAdapter<ResultsItem, GamesAdapter.ViewHolder>(TaskDiffCallback()) {
+    ListAdapter<ResultsItem, GamesViewPagerAdapter.ViewHolder>(TaskDiffResultsItemCallback()) {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(viewModel, items[position], items.size - 1)
+        holder.bind(viewModel, items[position])
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -29,31 +29,16 @@ class GamesAdapter(
 
     override fun getItemCount() = items.size
 
-    class ViewHolder private constructor(private val binding: GamesItemBinding) :
+    class ViewHolder constructor(private val binding: GamesPagerListItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(viewModel: HomeFragmentViewModel, item: ResultsItem, size: Int) {
+        fun bind(viewModel: HomeFragmentViewModel, item: ResultsItem) {
 
             val params = binding.root.layoutParams as RecyclerView.LayoutParams
-            when (bindingAdapterPosition) {
-                0 -> {
-                    params.topMargin =
-                        dpToPx(binding.root.context, 10)
-                    binding.root.layoutParams = params
-                }
-                size - 1 -> {
-                    params.bottomMargin =
-                        dpToPx(binding.root.context, 20)
-                    binding.root.layoutParams = params
-                }
-                else -> {
-                    params.topMargin = 20
-                    binding.root.layoutParams = params
-                }
-            }
 
             binding.titleTv.text = item.name
-            binding.descTv.text = item.released
+            binding.ratingTv.text = "${item.rating} / ${item.rating_top ?: 5}"
+            binding.dateTv.text = item.released ?: ""
 
             // create a ProgressDrawable object which we will show as placeholder
             val progress = CircularProgressDrawable(binding.root.context)
@@ -68,7 +53,7 @@ class GamesAdapter(
                 .load(item.background_image)
                 .placeholder(progress)
                 .centerCrop()
-                .into(binding.imageIv)
+                .into(binding.backgroundIv)
         }
 
         private fun dpToPx(context: Context, dp: Int): Int {
@@ -80,7 +65,7 @@ class GamesAdapter(
         companion object {
             fun from(parent: ViewGroup): ViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
-                val binding = GamesItemBinding.inflate(layoutInflater, parent, false)
+                val binding = GamesPagerListItemBinding.inflate(layoutInflater, parent, false)
 
                 return ViewHolder(binding)
             }
@@ -94,7 +79,7 @@ class GamesAdapter(
  * Used by ListAdapter to calculate the minimum number of changes between and old list and a new
  * list that's been passed to `submitList`.
  */
-class TaskDiffCallback : DiffUtil.ItemCallback<ResultsItem>() {
+class TaskDiffResultsItemCallback : DiffUtil.ItemCallback<ResultsItem>() {
     override fun areItemsTheSame(oldItem: ResultsItem, newItem: ResultsItem): Boolean {
         return oldItem.id == newItem.id
     }

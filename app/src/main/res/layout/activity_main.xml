@@ -10,7 +10,7 @@
         android:layout_above="@id/navigation" />
 
 
-    <com.egeysn.video_games_sprint.utils.views.NavigationBar
+    <com.egeysn.video_games_sprint.utils.views.BottomNavigationBar
         android:id="@+id/navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

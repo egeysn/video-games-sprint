@@ -14,7 +14,7 @@ import com.egeysn.video_games_sprint.databinding.NavigationBarBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class NavigationBar : LinearLayout, View.OnClickListener {
+class BottomNavigationBar : LinearLayout, View.OnClickListener {
 
     private var listener: NavigationBarListener? = null
 
