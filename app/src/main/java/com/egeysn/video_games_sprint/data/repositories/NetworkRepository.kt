@@ -1,23 +1,11 @@
-package com.egeysn.video_games_sprint.data.repositories
+package com.example.moviedb.data.repository
 
-import com.egeysn.video_games_sprint.BuildConfig
-import com.egeysn.video_games_sprint.data.remote.ApiService
-import com.egeysn.video_games_sprint.utils.performOperation
-import com.naylalabs.kotlinbaseproject.common.BaseDataSource
-import javax.inject.Inject
+import androidx.lifecycle.LiveData
+import com.egeysn.video_games_sprint.data.response.GamesResponse
+import com.egeysn.video_games_sprint.utils.Resource
 
 
-class NetworkRepository @Inject constructor(
-    private val apiService: ApiService
-) : BaseDataSource() {
+interface NetworkRepository {
 
-    fun getGames() =
-        performOperation {
-            getResult {
-                apiService.getGames(
-                    BuildConfig.API_KEY
-                )
-            }
-        }
-
+    fun getGames(): LiveData<Resource<GamesResponse>>
 }
