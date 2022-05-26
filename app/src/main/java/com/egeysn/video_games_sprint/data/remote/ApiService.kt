@@ -1,6 +1,6 @@
 package com.egeysn.video_games_sprint.data.remote
 
-import com.egeysn.video_games_sprint.data.repositories.GamesResponse
+import com.egeysn.video_games_sprint.data.response.GamesResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query

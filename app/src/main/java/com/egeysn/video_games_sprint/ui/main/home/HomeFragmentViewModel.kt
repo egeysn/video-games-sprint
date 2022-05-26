@@ -1,7 +1,7 @@
 package com.egeysn.video_games_sprint.ui.main.home
 
 import androidx.lifecycle.LiveData
-import com.egeysn.video_games_sprint.data.repositories.GamesResponse
+import com.egeysn.video_games_sprint.data.response.GamesResponse
 import com.egeysn.video_games_sprint.data.repositories.NetworkRepository
 import com.egeysn.video_games_sprint.utils.Resource
 import com.naylalabs.kotlinbaseproject.common.BaseViewModel

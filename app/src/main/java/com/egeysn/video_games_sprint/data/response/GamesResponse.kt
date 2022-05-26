@@ -1,124 +1,47 @@
-package com.egeysn.video_games_sprint.data.repositories
+package com.egeysn.video_games_sprint.data.response
 
+import com.egeysn.video_games_sprint.data.generals.Filters
 import com.egeysn.video_games_sprint.data.generals.ResultsItem
+import com.squareup.moshi.Json
 
 data class GamesResponse(
-    val next: String,
-    val nofollow: Boolean,
-    val noindex: Boolean,
-    val nofollowCollections: List<String>,
-    val previous: Any,
-    val count: Int,
-    val description: String,
-    val seoH1: String,
-    val filters: Filters,
-    val seoTitle: String,
-    val seoDescription: String,
-    val results: List<ResultsItem>,
-    val seoKeywords: String
-)
 
-data class TagsItem(
-    val gamesCount: Int,
-    val name: String,
-    val language: String,
-    val id: Int,
-    val imageBackground: String,
-    val slug: String
-)
+    @Json(name = "next")
+    val next: String? = null,
 
-data class RatingsItem(
-    val count: Int,
-    val id: Int,
-    val title: String,
-    val percent: Double
-)
+    @Json(name = "nofollow")
+    val nofollow: Boolean? = null,
 
-data class Platform(
-    val image: Any,
-    val gamesCount: Int,
-    val yearEnd: Any,
-    val yearStart: Int,
-    val name: String,
-    val id: Int,
-    val imageBackground: String,
-    val slug: String
-)
+    @Json(name = "noindex")
+    val noindex: Boolean? = null,
 
-data class AddedByStatus(
-    val owned: Int,
-    val beaten: Int,
-    val dropped: Int,
-    val yet: Int,
-    val playing: Int,
-    val toplay: Int
-)
+    @Json(name = "nofollow_collections")
+    val nofollowCollections: List<String?>? = null,
 
-data class YearsItem(
-    val filter: String,
-    val nofollow: Boolean,
-    val decade: Int,
-    val count: Int,
-    val from: Int,
-    val to: Int,
-    val years: List<YearsItem>,
-    val year: Int
-)
+    @Json(name = "previous")
+    val previous: Any? = null,
 
-data class Store(
-    val gamesCount: Int,
-    val domain: String,
-    val name: String,
-    val id: Int,
-    val imageBackground: String,
-    val slug: String
-)
+    @Json(name = "count")
+    val count: Int? = null,
 
-data class PlatformsItem(
-    val requirementsRu: Any,
-    val requirementsEn: Any,
-    val releasedAt: String,
-    val platform: Platform
-)
+    @Json(name = "description")
+    val description: String? = null,
 
-data class GenresItem(
-    val gamesCount: Int,
-    val name: String,
-    val id: Int,
-    val imageBackground: String,
-    val slug: String
-)
+    @Json(name = "seo_h1")
+    val seoH1: String? = null,
 
-data class EsrbRating(
-    val name: String,
-    val id: Int,
-    val slug: String
-)
+    @Json(name = "filters")
+    val filters: Filters? = null,
 
-data class RequirementsEn(
-    val minimum: String,
-    val recommended: String
-)
+    @Json(name = "seo_title")
+    val seoTitle: String? = null,
 
-data class RequirementsRu(
-    val minimum: String,
-    val recommended: String
-)
+    @Json(name = "seo_description")
+    val seoDescription: String? = null,
 
-data class Filters(
-    val years: List<YearsItem>
-)
+    @Json(name = "results")
+    val results: List<ResultsItem>? = emptyList(),
 
-data class ParentPlatformsItem(
-    val platform: Platform
-)
-
-data class ShortScreenshotsItem(
-    val image: String?,
-    val id: Int?
-)
-
-data class StoresItem(
-    val id: Int?,
-    val store: Store?
+    @Json(name = "seo_keywords")
+    val seoKeywords: String? = null
 )

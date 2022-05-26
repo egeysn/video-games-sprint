@@ -8,8 +8,8 @@ import androidx.fragment.app.activityViewModels
 import androidx.viewpager2.widget.ViewPager2
 import com.egeysn.video_games_sprint.adapters.GamesAdapter
 import com.egeysn.video_games_sprint.adapters.GamesViewPagerAdapter
+import com.egeysn.video_games_sprint.data.response.GamesResponse
 import com.egeysn.video_games_sprint.data.generals.ResultsItem
-import com.egeysn.video_games_sprint.data.repositories.GamesResponse
 import com.egeysn.video_games_sprint.databinding.FragmentHomeBinding
 import com.egeysn.video_games_sprint.utils.Resource
 import com.egeysn.video_games_sprint.utils.views.ZoomOutPageTransformer
@@ -64,15 +64,15 @@ class HomeFragment() :
     private fun onGamesFetched(response: GamesResponse) {
         Timber.d("games list fetched")
         val resultList = response.results
-        val viewPagerList = resultList.take(3)
-        setupViewPager(viewPagerList)
-        val subResultList = response.results.slice(2 until resultList.size)
         if (resultList.isNullOrEmpty()) {
             binding.body.visibility = View.GONE
             binding.emptyList.visibility = View.VISIBLE
         } else {
             binding.body.visibility = View.VISIBLE
             binding.emptyList.visibility = View.GONE
+            val viewPagerList = resultList.take(3)
+            setupViewPager(viewPagerList)
+            val subResultList = response.results.slice(2 until resultList.size)
             val adapter = GamesAdapter(viewModel, subResultList)
             binding.gamesRv.adapter = adapter
         }

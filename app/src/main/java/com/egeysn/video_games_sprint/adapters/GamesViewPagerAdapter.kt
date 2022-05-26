@@ -37,7 +37,7 @@ class GamesViewPagerAdapter(
             val params = binding.root.layoutParams as RecyclerView.LayoutParams
 
             binding.titleTv.text = item.name
-            binding.ratingTv.text = "${item.rating} / ${item.rating_top ?: 5}"
+            binding.ratingTv.text = "${item.rating} / ${item.ratingTop ?: 5}"
             binding.dateTv.text = item.released ?: ""
 
             // create a ProgressDrawable object which we will show as placeholder
@@ -50,7 +50,7 @@ class GamesViewPagerAdapter(
             progress.start()
 
             Glide.with(binding.root.context)
-                .load(item.background_image)
+                .load(item.backgroundImage)
                 .placeholder(progress)
                 .centerCrop()
                 .into(binding.backgroundIv)

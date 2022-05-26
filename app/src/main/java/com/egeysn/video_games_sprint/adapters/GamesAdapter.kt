@@ -65,7 +65,7 @@ class GamesAdapter(
             progress.start()
 
             Glide.with(binding.root.context)
-                .load(item.background_image)
+                .load(item.backgroundImage)
                 .placeholder(progress)
                 .centerCrop()
                 .into(binding.imageIv)

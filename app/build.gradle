@@ -60,7 +60,11 @@ dependencies {
 
     //retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
-    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofitVersion"
+
+    // moshi
+    implementation "com.squareup.moshi:moshi-kotlin:$moshiVersion"
+    kapt"com.squareup.moshi:moshi-kotlin-codegen:$moshiVersion"
 
     // Coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
@@ -96,6 +100,7 @@ dependencies {
 
     //dots indicator
     implementation("com.tbuonomo:dotsindicator:4.3")
+
 
 
 
