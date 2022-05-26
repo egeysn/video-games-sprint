@@ -1,4 +1,4 @@
-package com.naylalabs.kotlinbaseproject.common
+package com.egeysn.video_games_sprint.common
 
 
 import com.egeysn.video_games_sprint.utils.Resource

@@ -4,11 +4,8 @@ import com.squareup.moshi.Json
 
 data class PlatformsItem(
 
-	@Json(name="requirements_ru")
-	val requirementsRu: Any? = null,
-
-	@Json(name="requirements_en")
-	val requirementsEn: RequirementsEn? = null,
+	@Json(name="requirements")
+	val requirements: Requirements? = null,
 
 	@Json(name="released_at")
 	val releasedAt: String? = null,

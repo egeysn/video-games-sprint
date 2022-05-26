@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import com.egeysn.video_games_sprint.databinding.FragmentFavoritesBinding
-import com.naylalabs.kotlinbaseproject.common.BaseFragment
+import com.egeysn.video_games_sprint.common.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

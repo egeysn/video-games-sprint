@@ -26,5 +26,8 @@ data class Platform(
 	val imageBackground: String? = null,
 
 	@Json(name="slug")
-	val slug: String? = null
+	val slug: String? = null,
+
+	@Json(name="platform")
+	val platform: Int? = null
 )

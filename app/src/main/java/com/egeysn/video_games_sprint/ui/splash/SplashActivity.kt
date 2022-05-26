@@ -6,7 +6,7 @@ import android.os.Handler
 import androidx.activity.viewModels
 import com.egeysn.video_games_sprint.R
 import com.egeysn.video_games_sprint.ui.main.MainActivity
-import com.naylalabs.kotlinbaseproject.common.BaseActivity
+import com.egeysn.video_games_sprint.common.BaseActivity
 
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : BaseActivity() {

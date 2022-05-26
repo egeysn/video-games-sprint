@@ -8,5 +8,8 @@ data class StoresItem(
 	val id: Int? = null,
 
 	@Json(name="store")
-	val store: Store? = null
+	val store: Store? = null,
+
+	@Json(name="url")
+	val url: String? = null
 )

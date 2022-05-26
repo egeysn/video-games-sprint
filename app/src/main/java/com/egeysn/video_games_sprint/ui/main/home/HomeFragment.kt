@@ -13,7 +13,7 @@ import com.egeysn.video_games_sprint.data.generals.ResultsItem
 import com.egeysn.video_games_sprint.databinding.FragmentHomeBinding
 import com.egeysn.video_games_sprint.utils.Resource
 import com.egeysn.video_games_sprint.utils.views.ZoomOutPageTransformer
-import com.naylalabs.kotlinbaseproject.common.BaseFragment
+import com.egeysn.video_games_sprint.common.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 

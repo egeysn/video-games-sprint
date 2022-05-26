@@ -1,29 +1,28 @@
-package com.naylalabs.kotlinbaseproject.common
+package com.egeysn.video_games_sprint.common
 
-import android.os.Bundle
-import android.view.View
 import androidx.fragment.app.Fragment
 import com.egeysn.video_games_sprint.utils.LoadingHelper
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 open class BaseFragment : Fragment() {
 
+    @Inject
     lateinit var loadingHelper: LoadingHelper
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        loadingHelper = LoadingHelper.getInstance(requireActivity())
-    }
-
-    fun showLoading() {
-        requireActivity().runOnUiThread {
-            loadingHelper.showDialog()
+    override fun onResume() {
+        super.onResume()
+        try {
+            loadingHelper.register(requireContext())
+        } catch (e: Exception) {
         }
+    }
+    fun showLoading() {
+        loadingHelper.showDialog()
     }
 
     fun hideLoading() {
-        requireActivity().runOnUiThread { loadingHelper.hideDialog() }
+        loadingHelper.hideDialog()
     }
-
 }

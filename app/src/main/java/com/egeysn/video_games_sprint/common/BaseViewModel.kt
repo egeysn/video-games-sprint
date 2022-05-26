@@ -1,7 +1,5 @@
-package com.naylalabs.kotlinbaseproject.common
+package com.egeysn.video_games_sprint.common
 
 import androidx.lifecycle.ViewModel
 
- open class BaseViewModel : ViewModel() {
-
-}
+open class BaseViewModel : ViewModel()

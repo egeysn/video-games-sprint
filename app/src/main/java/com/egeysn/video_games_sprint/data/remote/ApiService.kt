@@ -1,8 +1,10 @@
 package com.egeysn.video_games_sprint.data.remote
 
+import com.egeysn.video_games_sprint.data.response.GameDetailResponse
 import com.egeysn.video_games_sprint.data.response.GamesResponse
 import retrofit2.Response
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface ApiService {
@@ -11,4 +13,10 @@ interface ApiService {
     suspend fun getGames(
         @Query("key") apiKey: String,
     ): Response<GamesResponse>
+
+    @GET("games/{id]")
+    suspend fun getGameDetail(
+        @Path("id") id: Int,
+        @Query("key") apiKey: String,
+    ): Response<GameDetailResponse>
 }
