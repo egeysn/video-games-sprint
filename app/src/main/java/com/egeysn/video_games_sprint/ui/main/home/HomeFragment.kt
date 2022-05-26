@@ -83,7 +83,7 @@ class HomeFragment() :
         viewPager2.adapter = viewPagerAdapter
         viewPager2.setPageTransformer(ZoomOutPageTransformer())
         viewPager2.setCurrentItem(0, false)
-        binding.dotsIndicator.setViewPager2(viewPager2)
+        binding.dotsIndicator.attachTo(viewPager2)
     }
 
     private fun listeners() {
